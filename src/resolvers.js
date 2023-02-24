@@ -30,6 +30,7 @@ const resolvers = {
   
           const newEmail = new EmailModel({ name, email, message })
           await newEmail.save()
+          console.log(mailOptions);
           await transporter.sendMail(mailOptions);
           return newEmail;
         }
